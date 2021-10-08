@@ -1,9 +1,9 @@
-package me.giodev.templateplugin.data.gui.menus;
+package me.giodev.compressibleblocks.data.gui.menus;
 
 import com.cryptomorin.xseries.XMaterial;
 import de.tr7zw.changeme.nbtapi.NBTItem;
-import me.giodev.templateplugin.data.gui.GUIButton;
-import me.giodev.templateplugin.data.gui.PaginatedGUI;
+import me.giodev.compressibleblocks.data.gui.GUIButton;
+import me.giodev.compressibleblocks.data.gui.PaginatedGUI;
 import org.bukkit.Material;
 import org.bukkit.entity.Player;
 import org.bukkit.event.inventory.InventoryClickEvent;
@@ -12,9 +12,9 @@ import org.jetbrains.annotations.NotNull;
 
 import java.util.ArrayList;
 
-public class ExamplePaginatedMenu extends PaginatedGUI {
+public class CompressibleBlockListMenu extends PaginatedGUI {
 
-  public ExamplePaginatedMenu(Player player) {
+  public CompressibleBlockListMenu(Player player) {
     super(player);
   }
 

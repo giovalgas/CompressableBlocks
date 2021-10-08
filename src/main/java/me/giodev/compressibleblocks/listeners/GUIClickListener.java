@@ -1,7 +1,7 @@
-package me.giodev.templateplugin.listeners;
+package me.giodev.compressibleblocks.listeners;
 
-import me.giodev.templateplugin.TemplatePlugin;
-import me.giodev.templateplugin.data.gui.BaseGUI;
+import me.giodev.compressibleblocks.CompressibleBlocks;
+import me.giodev.compressibleblocks.data.gui.BaseGUI;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
@@ -10,9 +10,9 @@ import org.bukkit.inventory.InventoryHolder;
 
 public class GUIClickListener implements Listener {
 
-  private TemplatePlugin plugin;
+  private CompressibleBlocks plugin;
 
-  public GUIClickListener(TemplatePlugin plugin) {
+  public GUIClickListener(CompressibleBlocks plugin) {
     this.plugin = plugin;
   }
 

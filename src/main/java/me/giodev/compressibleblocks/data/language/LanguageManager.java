@@ -1,8 +1,8 @@
-package me.giodev.templateplugin.data.language;
+package me.giodev.compressibleblocks.data.language;
 
 import com.cryptomorin.xseries.XSound;
-import me.giodev.templateplugin.TemplatePlugin;
-import me.giodev.templateplugin.utils.FileManager;
+import me.giodev.compressibleblocks.CompressibleBlocks;
+import me.giodev.compressibleblocks.utils.FileManager;
 import org.bukkit.configuration.InvalidConfigurationException;
 import org.bukkit.configuration.file.YamlConfiguration;
 
@@ -14,7 +14,7 @@ import java.util.List;
 
 public class LanguageManager {
 
-  private TemplatePlugin plugin;
+  private CompressibleBlocks plugin;
   private YamlConfiguration langFileConfig;
 
   //Messages
@@ -25,7 +25,7 @@ public class LanguageManager {
   //Sounds
   private XSound clickSound;
 
-  public LanguageManager(TemplatePlugin plugin) throws InvalidConfigurationException {
+  public LanguageManager(CompressibleBlocks plugin) throws InvalidConfigurationException {
     this.plugin = plugin;
     load();
   }

@@ -1,17 +1,17 @@
-package me.giodev.templateplugin;
+package me.giodev.compressibleblocks;
 
-import me.giodev.templateplugin.commands.BaseCommand;
-import me.giodev.templateplugin.commands.examplecommand.ExampleCommand;
-import me.giodev.templateplugin.data.config.ConfigManager;
-import me.giodev.templateplugin.data.language.LanguageManager;
-import me.giodev.templateplugin.listeners.GUIClickListener;
-import me.giodev.templateplugin.utils.LoggerUtil;
+import me.giodev.compressibleblocks.commands.BaseCommand;
+import me.giodev.compressibleblocks.commands.examplecommand.CompressibleCommand;
+import me.giodev.compressibleblocks.data.config.ConfigManager;
+import me.giodev.compressibleblocks.data.language.LanguageManager;
+import me.giodev.compressibleblocks.listeners.GUIClickListener;
+import me.giodev.compressibleblocks.utils.LoggerUtil;
 import org.bukkit.configuration.InvalidConfigurationException;
 import org.bukkit.plugin.PluginManager;
 import org.bukkit.plugin.java.JavaPlugin;
 
 
-public final class TemplatePlugin extends JavaPlugin {
+public final class CompressibleBlocks extends JavaPlugin {
 
   private ConfigManager configManager;
   private LanguageManager languageManager;
@@ -37,7 +37,7 @@ public final class TemplatePlugin extends JavaPlugin {
   }
 
   private void loadCommands() {
-    loadCommand(new ExampleCommand(this));
+    loadCommand(new CompressibleCommand(this));
   }
 
   private void loadCommand(BaseCommand command) {

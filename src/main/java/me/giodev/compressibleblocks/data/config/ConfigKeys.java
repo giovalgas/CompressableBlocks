@@ -1,4 +1,4 @@
-package me.giodev.templateplugin.data.config;
+package me.giodev.compressibleblocks.data.config;
 
 public class ConfigKeys {
 

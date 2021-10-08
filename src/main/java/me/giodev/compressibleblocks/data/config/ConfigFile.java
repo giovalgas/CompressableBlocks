@@ -1,23 +1,22 @@
-package me.giodev.templateplugin.data.config;
+package me.giodev.compressibleblocks.data.config;
 
-import me.giodev.templateplugin.TemplatePlugin;
-import me.giodev.templateplugin.utils.FileManager;
+import me.giodev.compressibleblocks.CompressibleBlocks;
+import me.giodev.compressibleblocks.utils.FileManager;
 import org.bukkit.configuration.InvalidConfigurationException;
 import org.bukkit.configuration.file.FileConfiguration;
 
 import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
-import java.util.Iterator;
 import java.util.List;
 
 public class ConfigFile {
 
   File configFile;
-  TemplatePlugin plugin;
+  CompressibleBlocks plugin;
   FileConfiguration config;
 
-  public ConfigFile(TemplatePlugin plugin){
+  public ConfigFile(CompressibleBlocks plugin){
     this.plugin = plugin;
   }
 

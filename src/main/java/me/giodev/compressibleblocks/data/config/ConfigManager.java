@@ -1,17 +1,17 @@
-package me.giodev.templateplugin.data.config;
+package me.giodev.compressibleblocks.data.config;
 
-import me.giodev.templateplugin.TemplatePlugin;
+import me.giodev.compressibleblocks.CompressibleBlocks;
 import org.bukkit.configuration.InvalidConfigurationException;
 
 public class ConfigManager {
 
   //Plugin
-  private final TemplatePlugin plugin;
+  private final CompressibleBlocks plugin;
 
   //Config Values
   private String consolePrefix;
 
-  public ConfigManager(TemplatePlugin plugin) throws InvalidConfigurationException {
+  public ConfigManager(CompressibleBlocks plugin) throws InvalidConfigurationException {
     this.plugin = plugin;
     load();
   }

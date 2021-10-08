@@ -1,10 +1,9 @@
-package me.giodev.templateplugin.commands;
+package me.giodev.compressibleblocks.commands;
 
-import me.giodev.templateplugin.TemplatePlugin;
-import me.giodev.templateplugin.data.permissions.Permission;
+import me.giodev.compressibleblocks.CompressibleBlocks;
+import me.giodev.compressibleblocks.data.permissions.Permission;
 import org.bukkit.command.*;
 
-import org.bukkit.command.defaults.BukkitCommand;
 import org.bukkit.entity.Player;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
@@ -15,9 +14,9 @@ import java.util.stream.Collectors;
 public abstract class BaseCommand implements TabExecutor, CommandExecutor {
 
   protected HashMap<String, SubCommand> subCommands = new HashMap<>();
-  protected TemplatePlugin plugin;
+  protected CompressibleBlocks plugin;
 
-  public BaseCommand(TemplatePlugin plugin) {
+  public BaseCommand(CompressibleBlocks plugin) {
     this.plugin = plugin;
   }
 

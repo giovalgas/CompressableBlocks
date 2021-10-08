@@ -1,4 +1,4 @@
-package me.giodev.templateplugin.data.gui;
+package me.giodev.compressibleblocks.data.gui;
 
 
 import org.bukkit.Bukkit;

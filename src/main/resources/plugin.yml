@@ -1,9 +1,9 @@
-name: TemplatePlugin
+name: CompressibleBlocks
 version: ${project.version}
-main: me.giodev.templateplugin.TemplatePlugin
+main: me.giodev.compressibleblocks.CompressibleBlocks
 api-version: 1.16
 commands:
-  excommand:
-    aliases: ["excmd"]
-    usage: "/tpcommand <args>"
-    description: "Example command"
+  compressibleblocks:
+    aliases: ["cp"]
+    usage: "/compressibleblocks <args>"
+    description: "CompressibleBlocks plugin main command"

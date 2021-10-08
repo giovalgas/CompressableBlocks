@@ -1,4 +1,4 @@
-package me.giodev.templateplugin.data.gui;
+package me.giodev.compressibleblocks.data.gui;
 
 import de.tr7zw.changeme.nbtapi.NBTItem;
 import org.bukkit.inventory.ItemStack;

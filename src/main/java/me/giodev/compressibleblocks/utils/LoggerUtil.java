@@ -1,6 +1,6 @@
-package me.giodev.templateplugin.utils;
+package me.giodev.compressibleblocks.utils;
 
-import me.giodev.templateplugin.TemplatePlugin;
+import me.giodev.compressibleblocks.CompressibleBlocks;
 import org.bukkit.Bukkit;
 
 import java.util.logging.Logger;
@@ -10,7 +10,7 @@ public class LoggerUtil {
   private Logger BukkitLogger;
   private String consolePrefix;
 
-  public LoggerUtil(TemplatePlugin plugin) {
+  public LoggerUtil(CompressibleBlocks plugin) {
     this.consolePrefix = plugin.getConfigManager().getConsolePrefix();
     this.BukkitLogger = Bukkit.getServer().getLogger();
   }

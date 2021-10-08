@@ -1,4 +1,4 @@
-package me.giodev.templateplugin.data.language;
+package me.giodev.compressibleblocks.data.language;
 
 public class LanguageKeys {
 

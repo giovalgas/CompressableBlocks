@@ -1,16 +1,16 @@
-package me.giodev.templateplugin.commands.examplecommand;
+package me.giodev.compressibleblocks.commands.examplecommand;
 
-import me.giodev.templateplugin.TemplatePlugin;
-import me.giodev.templateplugin.commands.BaseCommand;
-import me.giodev.templateplugin.data.permissions.Permission;
+import me.giodev.compressibleblocks.CompressibleBlocks;
+import me.giodev.compressibleblocks.commands.BaseCommand;
+import me.giodev.compressibleblocks.data.permissions.Permission;
 import org.bukkit.command.CommandSender;
 import org.jetbrains.annotations.NotNull;
 import java.util.Arrays;
 import java.util.List;
 
-public class ExampleCommand extends BaseCommand {
+public class CompressibleCommand extends BaseCommand {
 
-  public ExampleCommand(TemplatePlugin plugin) {
+  public CompressibleCommand(CompressibleBlocks plugin) {
     super(plugin);
   }
 
@@ -27,12 +27,12 @@ public class ExampleCommand extends BaseCommand {
 
   @Override
   public @NotNull String getName() {
-    return "excommand";
+    return "compressibleblocks";
   }
 
 
   @Override
-  public @NotNull List<String> getAliases() { return Arrays.asList(new String[]{"excmd"}.clone()); }
+  public @NotNull List<String> getAliases() { return Arrays.asList(new String[]{"cp"}.clone()); }
 
   @Override
   public boolean isPlayerOnly() {
