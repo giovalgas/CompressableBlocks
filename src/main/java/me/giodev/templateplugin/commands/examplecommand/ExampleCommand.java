@@ -2,7 +2,6 @@ package me.giodev.templateplugin.commands.examplecommand;
 
 import me.giodev.templateplugin.TemplatePlugin;
 import me.giodev.templateplugin.commands.BaseCommand;
-import me.giodev.templateplugin.commands.examplecommand.subcommands.ExampleSubCommand;
 import me.giodev.templateplugin.data.permissions.Permission;
 import org.bukkit.command.CommandSender;
 import org.jetbrains.annotations.NotNull;
@@ -13,7 +12,6 @@ public class ExampleCommand extends BaseCommand {
 
   public ExampleCommand(TemplatePlugin plugin) {
     super(plugin);
-    subCommands.put("TEST", new ExampleSubCommand());
   }
 
 
