@@ -1,7 +1,7 @@
 package me.giodev.compressibleblocks;
 
 import me.giodev.compressibleblocks.commands.BaseCommand;
-import me.giodev.compressibleblocks.commands.examplecommand.CompressibleCommand;
+import me.giodev.compressibleblocks.commands.examplecommand.CompCommand;
 import me.giodev.compressibleblocks.data.config.ConfigManager;
 import me.giodev.compressibleblocks.data.language.LanguageManager;
 import me.giodev.compressibleblocks.listeners.GUIClickListener;
@@ -37,7 +37,7 @@ public final class CompressibleBlocks extends JavaPlugin {
   }
 
   private void loadCommands() {
-    loadCommand(new CompressibleCommand(this));
+    loadCommand(new CompCommand(this));
   }
 
   private void loadCommand(BaseCommand command) {
@@ -46,7 +46,7 @@ public final class CompressibleBlocks extends JavaPlugin {
     getCommand(command.getName()).setAliases(command.getAliases());
   }
 
-  private void loadConfig(){
+  public void loadConfig(){
     try {
       this.configManager = new ConfigManager(this);
     } catch (InvalidConfigurationException e) {

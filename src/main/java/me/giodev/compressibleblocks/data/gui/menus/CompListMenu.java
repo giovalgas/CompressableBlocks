@@ -12,9 +12,9 @@ import org.jetbrains.annotations.NotNull;
 
 import java.util.ArrayList;
 
-public class CompressibleBlockListMenu extends PaginatedGUI {
+public class CompListMenu extends PaginatedGUI {
 
-  public CompressibleBlockListMenu(Player player) {
+  public CompListMenu(Player player) {
     super(player);
   }
 
