@@ -1,0 +1,2 @@
+package me.giodev.compressibleblocks.commands.examplecommand.subcommands;public class CompList {
+}

@@ -1,3 +1,17 @@
 #Config.yml - Compressible Blocks
 
 console-prefix: "[CompressibleBlocks] "
+
+# Compressed block ItemStack format
+compressed-block:
+  name: "&9Compressed %material_type% Block"
+  lore:
+    - "&7This is a compressed &e%material_type% &7blocks"
+    - "&7Place this in a crafting table to get 9 &e%material_type% &7blocks"
+
+
+#list of materials that can be compressed
+#uses the spigot class Material here is a list https://hub.spigotmc.org/javadocs/bukkit/org/bukkit/Material.html
+compressible-blocks:
+  - STONE
+  - BRICKS

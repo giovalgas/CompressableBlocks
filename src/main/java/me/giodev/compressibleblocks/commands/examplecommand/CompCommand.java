@@ -14,7 +14,6 @@ public class CompressibleCommand extends BaseCommand {
     super(plugin);
   }
 
-
   @Override
   public void executeStockSubCommand(CommandSender sender) {
     plugin.getLog().info("executing stock command!");
