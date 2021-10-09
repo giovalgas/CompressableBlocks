@@ -17,7 +17,7 @@ public class CompListSubCommand implements SubCommand {
     //TODO -> Add message: "Now opening the compressible blocks list"
 
     Player player = (Player) sender;
-    new CompListMenu(player).open();
+    new CompListMenu(player, plugin).open();
 
   }
 

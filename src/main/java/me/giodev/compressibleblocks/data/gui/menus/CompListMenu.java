@@ -2,20 +2,27 @@ package me.giodev.compressibleblocks.data.gui.menus;
 
 import com.cryptomorin.xseries.XMaterial;
 import de.tr7zw.changeme.nbtapi.NBTItem;
+import me.giodev.compressibleblocks.CompressibleBlocks;
+import me.giodev.compressibleblocks.data.data.CompressedBlock;
 import me.giodev.compressibleblocks.data.gui.GUIButton;
 import me.giodev.compressibleblocks.data.gui.PaginatedGUI;
+import org.bukkit.ChatColor;
 import org.bukkit.Material;
 import org.bukkit.entity.Player;
 import org.bukkit.event.inventory.InventoryClickEvent;
 import org.bukkit.inventory.ItemStack;
+import org.bukkit.inventory.meta.ItemMeta;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.ArrayList;
 
 public class CompListMenu extends PaginatedGUI {
 
-  public CompListMenu(Player player) {
+  private CompressibleBlocks plugin;
+
+  public CompListMenu(Player player, CompressibleBlocks plugin) {
     super(player);
+    this.plugin = plugin;
   }
 
   @Override
@@ -37,38 +44,50 @@ public class CompListMenu extends PaginatedGUI {
 
   @Override
   public void setupInventoryItems() {
-    inventory.setItem(47, new GUIButton(new ItemStack(XMaterial.STONE_BUTTON.parseMaterial()), "PREVIOUS_PAGE").getItemStack());
-    inventory.setItem(51, new GUIButton(new ItemStack(XMaterial.STONE_BUTTON.parseMaterial()), "NEXT_PAGE").getItemStack());
-    fillInventory(45, getSize());
+
+    ItemStack next = new ItemStack(XMaterial.STONE_BUTTON.parseMaterial()); {
+      ItemMeta nextMeta = next.getItemMeta();
+      nextMeta.setDisplayName(ChatColor.BLUE + "Next page");
+      next.setItemMeta(nextMeta);
+    }
+
+    ItemStack previous = new ItemStack(XMaterial.STONE_BUTTON.parseMaterial()); {
+      ItemMeta previousMeta = previous.getItemMeta();
+      previousMeta.setDisplayName(ChatColor.BLUE + "Previous page");
+      previous.setItemMeta(previousMeta);
+    }
+
+    inventory.setItem(30, new GUIButton(previous, "PREVIOUS_PAGE").getItemStack());
+    inventory.setItem(32, new GUIButton(next, "NEXT_PAGE").getItemStack());
+    fillInventory(27, getSize());
+
   }
 
   @Override
   public @NotNull String getName() {
-    return "Example Paginated Menu";
+    return "Compressible Blocks";
   }
 
   @Override
   public int getSize() {
-    return 54;
+    return 36;
   }
 
   @Override
   public @NotNull ArrayList<ItemStack> getPageItems() {
 
     ArrayList<ItemStack> items = new ArrayList<>();
-    for(int i = 0; i < 128; i++) {
-      if(i % 2 == 0) {
-        items.add(new ItemStack(Material.DIAMOND));
-      }else{
-        items.add(new ItemStack(Material.EMERALD));
-      }
+
+    for(Material m : plugin.getRecipeManager().getMaterials()) {
+      items.add(new CompressedBlock(plugin, m).getItemStack());
     }
+
     return items;
 
   }
 
   @Override
   public int getPageSize() {
-    return 45;
+    return 27 ;
   }
 }

@@ -49,4 +49,8 @@ public class RecipeManager {
     }
   }
 
+  public ArrayList<Material> getMaterials() {
+    return materials;
+  }
+
 }
