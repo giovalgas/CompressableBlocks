@@ -39,6 +39,8 @@ public class CompressedBlock {
     meta.setDisplayName(ChatColor.BLUE + "Compressed " + formattedType + " Block");
     meta.setLore(lore);
 
+    compressedBlock.setItemMeta(meta);
+
     NBTItem nbtItem = new NBTItem(compressedBlock);
     nbtItem.setBoolean("COMPRESSED_BLOCK", true);
 
