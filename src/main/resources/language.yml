@@ -12,7 +12,7 @@ messages:
   reloading-plugin: "&ePlugin reloaded successfully!"
 
   page-error: "&cThere is no next/previous page."
-  opening-page: "&cOpening the compressible blocks list!"
+  opening-page: "&eOpening the compressible blocks list!"
 
 sounds:
   click-sound: CLICK
