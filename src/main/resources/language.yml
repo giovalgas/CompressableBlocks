@@ -1,7 +1,18 @@
 messages:
   message-prefix: "&c[&6CompressibleBlocks&c] "
+
+  help:
+    - "&8&m---------------------------------"
+    - "&e&lCompressibleBlocks"
+    - "&7▪ &e/cp &7- Displays this list"
+    - "&7▪ &e/cp list &7- Opens the compressible blocks list"
+    - "&8&m---------------------------------"
+
   no-permission: "&cYou don't have the permission needed to execute that command."
-  hello-world: "&aHello World!"
+  reloading-plugin: "&ePlugin reloaded successfully!"
+
+  page-error: "&cThere is no next/previous page."
+  opening-page: "&cOpening the compressible blocks list!"
 
 sounds:
-  test-sound: CLICK
+  click-sound: CLICK
