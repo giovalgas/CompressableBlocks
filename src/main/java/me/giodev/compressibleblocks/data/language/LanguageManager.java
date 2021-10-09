@@ -11,6 +11,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
+import java.util.Optional;
 
 public class LanguageManager {
 
@@ -102,7 +103,7 @@ public class LanguageManager {
 
   private XSound getSound(String p, XSound defaultSound) throws InvalidConfigurationException {
     try{
-      return XSound.valueOf(langFileConfig.getString(p));
+      return XSound.matchXSound(langFileConfig.getString(p)).get();
     }catch (IllegalArgumentException e){
       throw new InvalidConfigurationException("'Language.yml' the value specified in " + p + "is not a sound", e);
     }
