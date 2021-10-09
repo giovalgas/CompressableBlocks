@@ -19,9 +19,12 @@ public class LanguageManager {
   private YamlConfiguration langFileConfig;
 
   //Messages
-  private String helloWorld;
   private String chatPrefix;
   private String noPermission;
+  private String[] help;
+  private String reloadingPlugin;
+  private String pageError;
+  private String openingPage;
 
   //Sounds
   private XSound clickSound;
@@ -52,8 +55,11 @@ public class LanguageManager {
   private void loadValues() throws InvalidConfigurationException {
     //Messages
     this.chatPrefix = getString(LanguageKeys.MESSAGE_PREFIX, LanguageDefaults.MESSAGE_PREFIX);
-    this.helloWorld = chatPrefix + getString(LanguageKeys.HELLO_WORLD, LanguageDefaults.HELLO_WORLD);
     this.noPermission = chatPrefix + getString(LanguageKeys.NO_PERMISSION, LanguageDefaults.NO_PERMISSION);
+    this.help = getStringList(LanguageKeys.HELP, LanguageDefaults.HELP);
+    this.reloadingPlugin = chatPrefix + getString(LanguageKeys.RELOADING_PLUGIN, LanguageDefaults.RELOADING_PLUGIN);
+    this.pageError = chatPrefix + getString(LanguageKeys.PAGE_ERROR, LanguageDefaults.PAGE_ERROR);
+    this.openingPage = chatPrefix + getString(LanguageKeys.OPENING_PAGE, LanguageDefaults.OPENING_PAGE);
 
     //Sounds
     this.clickSound = getSound(LanguageKeys.CLICK_SOUND, LanguageDefaults.CLICK_SOUND);
@@ -109,8 +115,20 @@ public class LanguageManager {
     }
   }
 
-  public String getHelloWorld() {
-    return helloWorld;
+  public String[] getHelp() {
+    return help;
+  }
+
+  public String getReloadingPlugin() {
+    return reloadingPlugin;
+  }
+
+  public String getPageError() {
+    return pageError;
+  }
+
+  public String getOpeningPage() {
+    return openingPage;
   }
 
   public String getNoPermission() {

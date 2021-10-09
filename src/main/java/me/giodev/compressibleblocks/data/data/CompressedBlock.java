@@ -25,7 +25,6 @@ public class CompressedBlock {
     ItemStack compressedBlock = new ItemStack(mat);
     ItemMeta meta = compressedBlock.getItemMeta();
 
-    //TODO -> Move formatting to config.yml
     String formattedType = WordUtils.capitalize(mat.toString()
             .toLowerCase()
             .replace("_", " ")
