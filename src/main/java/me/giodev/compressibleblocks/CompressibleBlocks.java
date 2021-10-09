@@ -1,6 +1,5 @@
 package me.giodev.compressibleblocks;
 
-import com.cryptomorin.xseries.XEnchantment;
 import com.cryptomorin.xseries.XMaterial;
 import de.tr7zw.changeme.nbtapi.NBTItem;
 import me.giodev.compressibleblocks.commands.BaseCommand;
@@ -8,6 +7,8 @@ import me.giodev.compressibleblocks.commands.examplecommand.CompCommand;
 import me.giodev.compressibleblocks.data.config.ConfigManager;
 import me.giodev.compressibleblocks.data.language.LanguageManager;
 import me.giodev.compressibleblocks.listeners.GUIClickListener;
+import me.giodev.compressibleblocks.listeners.RecipeListener;
+import me.giodev.compressibleblocks.listeners.ShapelessRecipeListener;
 import me.giodev.compressibleblocks.utils.LoggerUtil;
 import me.giodev.compressibleblocks.utils.RecipeManager;
 import org.bukkit.Material;
@@ -70,6 +71,8 @@ public final class CompressibleBlocks extends JavaPlugin {
   private void loadEvents() {
     PluginManager pm = getServer().getPluginManager();
     pm.registerEvents(new GUIClickListener(this), this);
+    pm.registerEvents(new RecipeListener(), this);
+    pm.registerEvents(new ShapelessRecipeListener(), this);
   }
 
   private void loadCommands() {

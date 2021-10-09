@@ -7,8 +7,12 @@ import org.bukkit.Bukkit;
 import org.bukkit.Material;
 import org.bukkit.NamespacedKey;
 import org.bukkit.inventory.ItemStack;
+import org.bukkit.inventory.Recipe;
 import org.bukkit.inventory.ShapedRecipe;
+import org.bukkit.inventory.ShapelessRecipe;
+
 import java.util.ArrayList;
+import java.util.Iterator;
 
 public class RecipeManager {
 
@@ -35,8 +39,39 @@ public class RecipeManager {
     recipe.shape("XXX", "XXX", "XXX");
     recipe.setIngredient('X', material);
 
+    loadUncompressRecipe(material);
     Bukkit.addRecipe(recipe);
     plugin.getLog().info("Loaded -> " + material.toString() + " Recipe");
+
+  }
+
+  private void loadUncompressRecipe(Material material) {
+
+    ShapelessRecipe recipe = new ShapelessRecipe(new NamespacedKey(plugin,"UNCOMP_" + material.toString()), new ItemStack(material, 9));
+    recipe.addIngredient(material);
+
+    Iterator<Recipe> it = plugin.getServer().recipeIterator();
+
+    boolean overlappingRecipes = false;
+
+    while(it.hasNext()) {
+
+      Recipe itRecipe = it.next();
+
+      if(itRecipe instanceof ShapelessRecipe){
+
+        ShapelessRecipe shapelessRecipe = (ShapelessRecipe) itRecipe;
+
+        if(shapelessRecipe.getIngredientList().equals(recipe.getIngredientList())) {
+          overlappingRecipes = true;
+          break;
+        }
+      }
+    }
+
+    if(!overlappingRecipes){
+      Bukkit.addRecipe(recipe);
+    }
 
   }
 
