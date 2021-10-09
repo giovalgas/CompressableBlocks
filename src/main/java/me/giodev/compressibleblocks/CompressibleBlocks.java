@@ -9,6 +9,7 @@ import me.giodev.compressibleblocks.data.language.LanguageManager;
 import me.giodev.compressibleblocks.listeners.GUIClickListener;
 import me.giodev.compressibleblocks.listeners.RecipeListener;
 import me.giodev.compressibleblocks.listeners.ShapelessRecipeListener;
+import me.giodev.compressibleblocks.listeners.SmeltListener;
 import me.giodev.compressibleblocks.utils.LoggerUtil;
 import me.giodev.compressibleblocks.utils.RecipeManager;
 import org.bukkit.Material;
@@ -73,6 +74,7 @@ public final class CompressibleBlocks extends JavaPlugin {
     pm.registerEvents(new GUIClickListener(this), this);
     pm.registerEvents(new RecipeListener(), this);
     pm.registerEvents(new ShapelessRecipeListener(), this);
+    pm.registerEvents(new SmeltListener(), this);
   }
 
   private void loadCommands() {
