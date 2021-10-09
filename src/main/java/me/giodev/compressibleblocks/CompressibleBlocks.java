@@ -3,7 +3,7 @@ package me.giodev.compressibleblocks;
 import com.cryptomorin.xseries.XMaterial;
 import de.tr7zw.changeme.nbtapi.NBTItem;
 import me.giodev.compressibleblocks.commands.BaseCommand;
-import me.giodev.compressibleblocks.commands.examplecommand.CompCommand;
+import me.giodev.compressibleblocks.commands.compcommand.CompCommand;
 import me.giodev.compressibleblocks.data.config.ConfigManager;
 import me.giodev.compressibleblocks.data.language.LanguageManager;
 import me.giodev.compressibleblocks.listeners.GUIClickListener;

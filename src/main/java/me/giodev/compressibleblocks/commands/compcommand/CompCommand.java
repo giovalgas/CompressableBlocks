@@ -1,9 +1,9 @@
-package me.giodev.compressibleblocks.commands.examplecommand;
+package me.giodev.compressibleblocks.commands.compcommand;
 
 import me.giodev.compressibleblocks.CompressibleBlocks;
 import me.giodev.compressibleblocks.commands.BaseCommand;
-import me.giodev.compressibleblocks.commands.examplecommand.subcommands.CompListSubCommand;
-import me.giodev.compressibleblocks.commands.examplecommand.subcommands.ReloadSubCommand;
+import me.giodev.compressibleblocks.commands.compcommand.subcommands.CompListSubCommand;
+import me.giodev.compressibleblocks.commands.compcommand.subcommands.ReloadSubCommand;
 import me.giodev.compressibleblocks.data.permissions.Permission;
 import org.bukkit.command.CommandSender;
 import org.jetbrains.annotations.NotNull;
