@@ -40,12 +40,7 @@ public final class CompressibleBlocks extends JavaPlugin {
     loadCommands();
     loadEvents();
 
-    //TODO -> Move to config.yml
-    ArrayList<Material> materials = new ArrayList<>();
-    materials.add(Material.STONE);
-    materials.add(Material.BRICK);
-
-    this.recipeManager = new RecipeManager(materials, this);
+    this.recipeManager = new RecipeManager(configManager.getCompressibleBlocks(), this);
 
     log.info("Plugin fully started!");
   }
@@ -87,7 +82,7 @@ public final class CompressibleBlocks extends JavaPlugin {
     getCommand(command.getName()).setAliases(command.getAliases());
   }
 
-  public void loadConfig(){
+  private void loadConfig(){
     try {
       this.configManager = new ConfigManager(this);
     } catch (InvalidConfigurationException e) {

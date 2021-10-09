@@ -6,7 +6,7 @@ console-prefix: "[CompressibleBlocks] "
 compressed-block:
   name: "&9Compressed %material_type% Block"
   lore:
-    - "&7This is a compressed &e%material_type% &7blocks"
+    - "&7This is a compressed &e%material_type% &7block"
     - "&7Place this in a crafting table to get 9 &e%material_type% &7blocks"
 
 

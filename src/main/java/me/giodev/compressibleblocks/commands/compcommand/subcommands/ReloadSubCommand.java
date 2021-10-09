@@ -5,6 +5,7 @@ import me.giodev.compressibleblocks.commands.SubCommand;
 import me.giodev.compressibleblocks.data.permissions.Permission;
 import org.bukkit.Material;
 import org.bukkit.command.CommandSender;
+import org.bukkit.configuration.InvalidConfigurationException;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import java.util.ArrayList;
@@ -16,14 +17,13 @@ public class ReloadSubCommand implements SubCommand {
 
     //TODO -> Add message: "Reloading configuration file"
 
-    plugin.loadConfig();
+    try {
+      plugin.getConfigManager().reload();
+    } catch (InvalidConfigurationException e) {
+      e.printStackTrace();
+    }
 
-    //TODO -> Remove test code
-    ArrayList<Material> materials = new ArrayList<>();
-    materials.add(Material.APPLE);
-
-    plugin.getRecipeManager().reload(materials);
-
+    plugin.getRecipeManager().reload(plugin.getConfigManager().getCompressibleBlocks());
 
   }
 

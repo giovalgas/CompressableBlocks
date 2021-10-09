@@ -4,15 +4,11 @@ import com.cryptomorin.xseries.XEnchantment;
 import de.tr7zw.changeme.nbtapi.NBTItem;
 import me.giodev.compressibleblocks.CompressibleBlocks;
 import org.apache.commons.lang.WordUtils;
-import org.bukkit.ChatColor;
 import org.bukkit.Material;
 import org.bukkit.inventory.ItemFlag;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.ItemMeta;
-
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Locale;
+import java.util.stream.Collectors;
 
 public class CompressedBlock {
 
@@ -34,12 +30,9 @@ public class CompressedBlock {
             .toLowerCase()
             .replace("_", " ")
     );
-    ArrayList<String> lore = new ArrayList<>();
-    lore.add(ChatColor.GRAY + "This is a compressed " + ChatColor.YELLOW + formattedType + ChatColor.GRAY + " block");
-    lore.add(ChatColor.GRAY + "Place this in a crafting table to get 9 " + ChatColor.YELLOW + formattedType + ChatColor.GRAY + " blocks");
 
-    meta.setDisplayName(ChatColor.BLUE + "Compressed " + formattedType + " Block");
-    meta.setLore(lore);
+    meta.setDisplayName(plugin.getConfigManager().getCompressedName().replace("%material_type%", formattedType));
+    meta.setLore(plugin.getConfigManager().getCompressedLore().stream().map(s -> s.replace("%material_type%", formattedType)).collect(Collectors.toList()));
     meta.addEnchant(XEnchantment.DURABILITY.parseEnchantment(), 1, true);
     meta.addItemFlags(ItemFlag.HIDE_ENCHANTS);
 
