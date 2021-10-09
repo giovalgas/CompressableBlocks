@@ -3,9 +3,11 @@ package me.giodev.compressibleblocks.commands.examplecommand.subcommands;
 import me.giodev.compressibleblocks.CompressibleBlocks;
 import me.giodev.compressibleblocks.commands.SubCommand;
 import me.giodev.compressibleblocks.data.permissions.Permission;
+import org.bukkit.Material;
 import org.bukkit.command.CommandSender;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
+import java.util.ArrayList;
 
 public class ReloadSubCommand implements SubCommand {
 
@@ -15,6 +17,13 @@ public class ReloadSubCommand implements SubCommand {
     //TODO -> Add message: "Reloading configuration file"
 
     plugin.loadConfig();
+
+    //TODO -> Remove test code
+    ArrayList<Material> materials = new ArrayList<>();
+    materials.add(Material.APPLE);
+
+    plugin.getRecipeManager().reload(materials);
+
 
   }
 

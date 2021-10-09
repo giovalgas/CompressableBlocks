@@ -1,14 +1,23 @@
 package me.giodev.compressibleblocks;
 
+import com.cryptomorin.xseries.XEnchantment;
+import com.cryptomorin.xseries.XMaterial;
+import de.tr7zw.changeme.nbtapi.NBTItem;
 import me.giodev.compressibleblocks.commands.BaseCommand;
 import me.giodev.compressibleblocks.commands.examplecommand.CompCommand;
 import me.giodev.compressibleblocks.data.config.ConfigManager;
 import me.giodev.compressibleblocks.data.language.LanguageManager;
 import me.giodev.compressibleblocks.listeners.GUIClickListener;
 import me.giodev.compressibleblocks.utils.LoggerUtil;
+import me.giodev.compressibleblocks.utils.RecipeManager;
+import org.bukkit.Material;
 import org.bukkit.configuration.InvalidConfigurationException;
+import org.bukkit.inventory.Recipe;
 import org.bukkit.plugin.PluginManager;
 import org.bukkit.plugin.java.JavaPlugin;
+
+import java.util.ArrayList;
+import java.util.Iterator;
 
 
 public final class CompressibleBlocks extends JavaPlugin {
@@ -16,6 +25,7 @@ public final class CompressibleBlocks extends JavaPlugin {
   private ConfigManager configManager;
   private LanguageManager languageManager;
   private LoggerUtil log;
+  private RecipeManager recipeManager;
 
   @Override
   public void onEnable(){
@@ -28,7 +38,33 @@ public final class CompressibleBlocks extends JavaPlugin {
     loadCommands();
     loadEvents();
 
+    //TODO -> Move to config.yml
+    ArrayList<Material> materials = new ArrayList<>();
+    materials.add(Material.STONE);
+    materials.add(Material.BRICK);
+
+    this.recipeManager = new RecipeManager(materials, this);
+
     log.info("Plugin fully started!");
+  }
+
+  @Override
+  public void onDisable() {
+    Iterator<Recipe> it = this.getServer().recipeIterator();
+
+    while(it.hasNext()) {
+      Recipe next = it.next();
+
+      if(next.getResult().getType() != XMaterial.AIR.parseMaterial()) {
+        NBTItem nbtItem = new NBTItem(next.getResult());
+        if (nbtItem.hasKey("COMPRESSED_BLOCK")) {
+          it.remove();
+          log.info("Removed recipe for " + next.getResult().getType().toString());
+        }
+        ;
+      }
+    }
+
   }
 
   private void loadEvents() {
@@ -62,6 +98,7 @@ public final class CompressibleBlocks extends JavaPlugin {
     }
   }
 
+  public RecipeManager getRecipeManager() { return recipeManager; }
   public LoggerUtil getLog() { return log; }
   public ConfigManager getConfigManager() { return configManager; }
   public LanguageManager getLanguageManager() { return languageManager; }

@@ -1,10 +1,12 @@
 package me.giodev.compressibleblocks.data.data;
 
+import com.cryptomorin.xseries.XEnchantment;
 import de.tr7zw.changeme.nbtapi.NBTItem;
 import me.giodev.compressibleblocks.CompressibleBlocks;
 import org.apache.commons.lang.WordUtils;
 import org.bukkit.ChatColor;
 import org.bukkit.Material;
+import org.bukkit.inventory.ItemFlag;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.ItemMeta;
 
@@ -38,6 +40,8 @@ public class CompressedBlock {
 
     meta.setDisplayName(ChatColor.BLUE + "Compressed " + formattedType + " Block");
     meta.setLore(lore);
+    meta.addEnchant(XEnchantment.DURABILITY.parseEnchantment(), 1, true);
+    meta.addItemFlags(ItemFlag.HIDE_ENCHANTS);
 
     compressedBlock.setItemMeta(meta);
 
