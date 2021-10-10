@@ -1,29 +1,30 @@
 package me.giodev.compressibleblocks.listeners;
 
+import com.cryptomorin.xseries.XMaterial;
 import de.tr7zw.changeme.nbtapi.NBTItem;
 import org.bukkit.event.EventHandler;
+import org.bukkit.event.EventPriority;
 import org.bukkit.event.Listener;
 import org.bukkit.event.inventory.PrepareItemCraftEvent;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.ShapelessRecipe;
 
-public class ShapelessRecipeListener implements Listener {
+public class UncompressRecipeListener implements Listener {
 
-  @EventHandler
-  public void onShapelessRecipe(PrepareItemCraftEvent event) {
-    if(!(event.getRecipe() instanceof ShapelessRecipe)) return;
-
-    ShapelessRecipe recipe = (ShapelessRecipe) event.getRecipe();
+  @EventHandler(priority = EventPriority.NORMAL)
+  public void onUncompressRecipe(PrepareItemCraftEvent event) {
     ItemStack recipeItem = null;
 
+    int ingredientCount = 0;
+
     for(ItemStack is : event.getInventory().getMatrix()) {
-      if(is != null){
+      if (is != null && is.getType() != XMaterial.AIR.parseMaterial()) {
         recipeItem = is;
-        break;
+        ingredientCount++;
       }
     }
 
-    if(recipe.getIngredientList().size() == 1 && new NBTItem(recipeItem).hasKey("COMPRESSED_BLOCK")) {
+    if(ingredientCount == 1 && new NBTItem(recipeItem).hasKey("COMPRESSED_BLOCK")) {
       event.getInventory().setResult(new ItemStack(recipeItem.getType(), 9));
     }
 

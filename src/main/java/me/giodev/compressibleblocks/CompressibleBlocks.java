@@ -8,17 +8,15 @@ import me.giodev.compressibleblocks.data.config.ConfigManager;
 import me.giodev.compressibleblocks.data.language.LanguageManager;
 import me.giodev.compressibleblocks.listeners.GUIClickListener;
 import me.giodev.compressibleblocks.listeners.RecipeListener;
-import me.giodev.compressibleblocks.listeners.ShapelessRecipeListener;
+import me.giodev.compressibleblocks.listeners.UncompressRecipeListener;
 import me.giodev.compressibleblocks.listeners.SmeltListener;
 import me.giodev.compressibleblocks.utils.LoggerUtil;
 import me.giodev.compressibleblocks.utils.RecipeManager;
-import org.bukkit.Material;
 import org.bukkit.configuration.InvalidConfigurationException;
 import org.bukkit.inventory.Recipe;
 import org.bukkit.plugin.PluginManager;
 import org.bukkit.plugin.java.JavaPlugin;
 
-import java.util.ArrayList;
 import java.util.Iterator;
 
 
@@ -68,7 +66,7 @@ public final class CompressibleBlocks extends JavaPlugin {
     PluginManager pm = getServer().getPluginManager();
     pm.registerEvents(new GUIClickListener(this), this);
     pm.registerEvents(new RecipeListener(), this);
-    pm.registerEvents(new ShapelessRecipeListener(), this);
+    pm.registerEvents(new UncompressRecipeListener(), this);
     pm.registerEvents(new SmeltListener(), this);
   }
 
