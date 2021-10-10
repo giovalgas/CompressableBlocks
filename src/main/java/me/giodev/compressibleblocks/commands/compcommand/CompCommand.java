@@ -20,8 +20,7 @@ public class CompCommand extends BaseCommand {
 
   @Override
   public void executeStockSubCommand(CommandSender sender) {
-    //TODO -> Add message: List all subcommands
-    plugin.getLog().info("executing stock command!");
+    sender.sendMessage(plugin.getLanguageManager().getHelp());
   }
 
   @Override

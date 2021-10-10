@@ -1,6 +1,7 @@
 package me.giodev.compressibleblocks.data.gui;
 
 
+import me.giodev.compressibleblocks.CompressibleBlocks;
 import org.bukkit.Bukkit;
 import org.bukkit.entity.Player;
 import org.bukkit.inventory.ItemStack;
@@ -11,10 +12,12 @@ import java.util.ArrayList;
 public abstract class PaginatedGUI extends BaseGUI{
 
   protected int page;
+  protected CompressibleBlocks plugin;
   private int pageIndex;
 
-  public PaginatedGUI(Player player) {
+  public PaginatedGUI(Player player, CompressibleBlocks plugin) {
     super(player);
+    this.plugin = plugin;
   }
 
   @Override
@@ -50,7 +53,7 @@ public abstract class PaginatedGUI extends BaseGUI{
       this.page = page;
       open();
     }else {
-      player.sendMessage("CAN'T GO TO THE NEXT/PREVIOUS PAGE");
+      player.sendMessage(plugin.getLanguageManager().getPageError());
     }
 
   }

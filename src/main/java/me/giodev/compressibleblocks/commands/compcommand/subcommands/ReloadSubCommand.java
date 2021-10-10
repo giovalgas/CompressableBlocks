@@ -15,7 +15,7 @@ public class ReloadSubCommand implements SubCommand {
   @Override
   public void executeCommand(CommandSender sender, String[] args, CompressibleBlocks plugin) {
 
-    //TODO -> Add message: "Reloading configuration file"
+    sender.sendMessage(plugin.getLanguageManager().getReloadingPlugin());
 
     try {
       plugin.getConfigManager().reload();

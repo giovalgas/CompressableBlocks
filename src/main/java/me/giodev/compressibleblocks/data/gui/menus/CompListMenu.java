@@ -18,12 +18,10 @@ import java.util.ArrayList;
 
 public class CompListMenu extends PaginatedGUI {
 
-  private CompressibleBlocks plugin;
-
   public CompListMenu(Player player, CompressibleBlocks plugin) {
-    super(player);
-    this.plugin = plugin;
+    super(player, plugin);
   }
+
 
   @Override
   public void handleClick(InventoryClickEvent event) {
