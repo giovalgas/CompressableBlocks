@@ -3,6 +3,7 @@ package me.giodev.compressibleblocks.utils;
 import com.cryptomorin.xseries.XMaterial;
 import me.giodev.compressibleblocks.CompressibleBlocks;
 import me.giodev.compressibleblocks.data.data.CompressedBlock;
+import me.giodev.multiversion.MultiVersionRecipe;
 import org.bukkit.Bukkit;
 import org.bukkit.Material;
 import org.bukkit.NamespacedKey;
@@ -34,8 +35,7 @@ public class RecipeManager {
   private void loadSingleRecipe(Material material) {
 
     ItemStack finalItem = new CompressedBlock(plugin, material).getItemStack();
-    ShapedRecipe recipe = new ShapedRecipe(new NamespacedKey(plugin, "COMP_" + material.toString()), finalItem);
-
+    ShapedRecipe recipe = new MultiVersionRecipe(plugin, "COMP_" + material.toString(), finalItem).getShapedRecipe();
     recipe.shape("XXX", "XXX", "XXX");
     recipe.setIngredient('X', material);
 
@@ -47,7 +47,7 @@ public class RecipeManager {
 
   private void loadUncompressRecipe(Material material) {
 
-    ShapelessRecipe recipe = new ShapelessRecipe(new NamespacedKey(plugin,"UNCOMP_" + material.toString()), new ItemStack(material, 9));
+    ShapelessRecipe recipe = new MultiVersionRecipe(plugin, "UNCOMP_" + material.toString(), new ItemStack(material, 9)).getShapelessRecipe();
     recipe.addIngredient(material);
 
     Iterator<Recipe> it = plugin.getServer().recipeIterator();
