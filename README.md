@@ -20,7 +20,7 @@
     Supports 1.8.8-1.16.5
     <br />
     <br />
-    <a href="">View Demo</a>
+    <a href="https://youtu.be/KLSvBaYkSnk">View Demo</a>
     ·
     <a href="https://github.com/giovalgas/CompressibleBlocks/issues">Report Bug</a>
     ·
@@ -52,7 +52,7 @@
   </tr>
  </table>
 
-Although this was made with the intent of adding it to my portfolio I fully intent to keep updating it.
+Although this was made with the intent of adding it to my portfolio I fully intent to keep updating fixing bugs.
 
 Features:
 * Configurable.
@@ -64,13 +64,12 @@ Features:
 This project was built with:
 * [Spigot](https://www.spigotmc.org/)
 * [Java](https://java.com/pt-BR/)
-* [Vault](https://dev.bukkit.org/projects/vault)
 * [XSeries](https://github.com/CryptoMorin/XSeries)
 * [NBTAPI](https://www.spigotmc.org/resources/nbt-api.7939/)
 
 ### Support the dev
 
-Enjoyed the plugin and want to support me monetarily [buy me a coffe!](https://www.buymeacoffee.com/giovalgasdev)
+Enjoyed the plugin and want to support me monetarily? [buy me a coffe!](https://www.buymeacoffee.com/giovalgasdev)
 Any donations are going to be **greatly appreciated!**
 <!-- GETTING STARTED -->
 ## Getting Started
