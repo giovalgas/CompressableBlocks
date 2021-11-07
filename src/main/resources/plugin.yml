@@ -1,6 +1,6 @@
 name: CompressibleBlocks
 version: ${project.version}
-main: me.giodev.compressibleblocks.CompressibleBlocks
+main: dev.giovalgas.compressibleblocks.CompressibleBlocks
 api-version: 1.16
 commands:
   compressibleblocks:
