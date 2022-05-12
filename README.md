@@ -52,7 +52,7 @@
   </tr>
  </table>
 
-Although this was made with the intent of adding it to my portfolio I fully intent to keep updating fixing bugs.
+Although this was made with the intent of adding it to my portfolio I fully intent to keep updating/fixing bugs.
 
 Features:
 * Configurable.
